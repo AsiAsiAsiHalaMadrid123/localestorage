@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your LocaleStorage</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-color: rgb(228, 228, 228);
+        }
+        div{
+            background-color: white;
+            width: 20vw;
+            height: 25vh;
+            -webkit-box-shadow: -1px 3px 73px -16px rgba(0,0,0,0.85);
+            -moz-box-shadow: -1px 3px 73px -16px rgba(0,0,0,0.85);
+            box-shadow: -1px 3px 73px -16px rgba(0,0,0,0.85);
+            border-radius: 15px;
+            margin: 10% auto;
+            padding: 15px;
+            text-align: center;
+        }
+        input{
+            padding: 5px;
+            display: block;
+            margin: 10px 0px 0px 1vw;
+            width: 16vw;
+        }
+        p{
+            margin-top: 10px;
+        }
+        button{
+            background-color: white;
+            border: 1px solid;
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 5px;
+            transition: 0.4s;
+        }
+        button:hover{
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Locale Storage</h1>
+        <input type="text" name="lkey" id="lkey" placeholder="Key...">
+        <input type="text" name="lvalue" id="lvalue" placeholder="Value...">
+        <button onclick="f1()">Create</button>
+        <button onclick="f2()">Show</button>
+        <p></p>
+    </div>
+    <script>
+        localStorage.clear()
+        let inp1 = document.querySelector("#lkey");
+        let inp2 = document.querySelector("#lvalue");
+        function f1() {
+                localStorage.setItem(inp1.value, inp2.value);
+                document.querySelector("p").innerText = "LocaleStorage-ə uğurla əlavə olundu!";
+        }
+        function f2() {
+                document.querySelector("p").innerText = `Value:${localStorage.getItem(inp1.value)}`;
+        }
+    </script>
+</body>
+</html>
